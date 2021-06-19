@@ -8,15 +8,45 @@
     <title>Webpack</title>
 </head>
 <body>
-
-<a href="index.html">Index</a>
-<a href="blog.html">Blog</a>
-    <div class="container">
-            <div class="col-sm col-6 m-auto" >
-                <button id="add" type="button" class="btn btn-outline-primary">Add</button>
-                <div id="result">
-                </div>
-            </div>
+<div class="container">
+    <div class="col-sm col-6 m-auto">
+        <button type="button"
+                class="btn btn-success btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            Create
+        </button>
+        <div id="result">
+        </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="row g-3" novalidate id="formPost">
+                <div class="modal-body">
+                    <input id="inputTitle" required class="form-control" type="text" placeholder="Title" aria-label="default input example">
+                    <div class="invalid-feedback">
+                        Invalid field.
+                    </div>
+                    <input id="inputDescription" required class="form-control mt-2" type="text" placeholder="Description" aria-label="default input example">
+                    <div class="invalid-feedback">
+                        Invalid field.
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button  class="btn btn-primary" id="add" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

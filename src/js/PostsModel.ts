@@ -12,8 +12,11 @@ export default class PostsModel extends  EventEmitter{
     addPost(title:string,desc:string){
         console.log(title,desc)
         this.posts.push(new Post(title,desc))
-        console.log(this.posts)
-        this.emit('postAdded')
+        this.emit('show')
+    }
+    deletePost(index:number){
+        this.posts.splice(index,1)
+        this.emit('show')
     }
 
     getPosts(){
